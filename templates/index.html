@@ -7,6 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>en la pagina de inicio desde una template</h1>
+    <h1>Productos</h1>
+    <a href="{{ url_for('crearProducto') }}">Nuevo</a>
+    <table>
+    <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>PRECIO</th>
+    </tr>
+
+    {% for producto in productos %}
+    <tr>
+        <td>{{producto['id']}}</td>
+        <td>{{producto['nombre'] }}</td>
+        <td>{{producto['precio'] }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    
 </body>
 </html>
